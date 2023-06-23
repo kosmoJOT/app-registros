@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { UserLogin } from '../../models/UserLogin';
+import { UserLogin } from '../../interfaces/UserLogin';
 import { ValidUser } from 'src/app/models/ValidUser';
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginComponent {
   form: FormGroup;
   loading: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private router: Router) {
     this.form = this.formBuilder.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
@@ -48,7 +49,7 @@ export class LoginComponent {
   loadingDashboard(){
     this.loading = true;
     setTimeout(() => {
-      this.loading = false;
+      this.router.navigate(['dashboard']);
     }, 3000);
   }
 }

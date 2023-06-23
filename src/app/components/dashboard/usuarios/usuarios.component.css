@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+th {
+  width: 20%;
+}
+
+.estiloAcciones {
+  text-align: right;
+}
+
+.mat-mdc-form-field {
+  margin-top: 1rem;
+  font-size: 14px;
+  width: 100%;
+}

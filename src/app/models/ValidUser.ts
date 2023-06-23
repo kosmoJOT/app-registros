@@ -1,4 +1,4 @@
-import { UserLogin } from "./UserLogin"
+import { UserLogin } from "../interfaces/UserLogin"
 
 export const ValidUser: UserLogin = {
   user: '123',
