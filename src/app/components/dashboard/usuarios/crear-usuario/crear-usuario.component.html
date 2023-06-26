@@ -1,0 +1,44 @@
+<div class="container">
+  <mat-toolbar>
+    <span>Crear Usuario</span>
+  </mat-toolbar>
+  <mat-card class="card">
+    <form [formGroup]="form" (ngSubmit)="agregarUsuario()">
+      <mat-grid-list cols="2" rowHeight="6rem">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="anchoBoton" appearance="outline">
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName="usuario">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="anchoBoton" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="anchoBoton" appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido">
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-form-field class="anchoBoton" appearance="outline">
+            <mat-label>Genero: </mat-label>
+            <mat-select formControlName="sexo">
+              <mat-option *ngFor="let genero of generos" [value]="genero.value">
+                {{ genero.genero }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+          <button mat-raised-button type="submit" color="primary" style="margin-right: 2rem;" [disabled]="form.invalid">AGREGAR</button>
+          <button mat-button color="warn">Volver</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card>
+
+</div>

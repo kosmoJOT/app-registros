@@ -21,7 +21,11 @@ export class UsuarioService {
   constructor() { }
 
   getUsuarios() {
-    return this.listUsuarios.slice()
+    return this.listUsuarios.slice();
+  }
+
+  agregarUsuario(usuario: Usuario){
+    this.listUsuarios.unshift(usuario);
   }
 
   eliminarUsuario(index: number) {
