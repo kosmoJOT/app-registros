@@ -10,5 +10,9 @@
   {
     "nombre": "Reportes",
     "redirect": "/dashboard/reportes"
+  },
+  {
+    "nombre": "Pokedex",
+    "redirect": "/dashboard/pokedex"
   }
 ]

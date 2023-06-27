@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Modulos
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 //Angular Material
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +20,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [],
@@ -28,8 +32,9 @@ import { MatSelectModule } from '@angular/material/select';
     //Modulos
     ReactiveFormsModule,
     HttpClientModule,
-    //Angular Material
     MatFormFieldModule,
+    FormsModule,
+    //Angular Material
     MatIconModule,
     MatInputModule,
     MatButtonModule,
@@ -42,14 +47,19 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatCardModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    MatSliderModule
   ],
   exports: [
     //Modulos
     ReactiveFormsModule,
     HttpClientModule,
-    //Angular Material
     MatFormFieldModule,
+    FormsModule,
+    //Angular Material
     MatIconModule,
     MatInputModule,
     MatButtonModule,
@@ -62,7 +72,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     MatCardModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
+    MatSliderModule
   ]
 })
 export class SharedModule { }

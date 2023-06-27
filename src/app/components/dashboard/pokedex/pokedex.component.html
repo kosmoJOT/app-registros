@@ -1,0 +1,70 @@
+<div class="listadoPokemon">
+  <mat-card class="contenedor">
+    <mat-card-header>
+      <mat-card-title>Filtrar por:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Rango:
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <table style="margin: auto;">
+            <tr>
+              <td>
+                <mat-form-field class="campoFormulario" appearance="outline">
+                  <mat-label>Min. ID (Max. ID: {{ maximoId }} )</mat-label>
+                  <input matInput type="number" [max]="maximoId" [(ngModel)]="minimoId">
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="campoFormulario" appearance="outline">
+                  <mat-label>Max. ID (Min. ID: {{ minimoId }} )</mat-label>
+                  <input matInput type="number" [min]="minimoId" [(ngModel)]="maximoId">
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Otro Filtro
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          Otro Filtro
+          <!-- <mat-form-field>
+          </mat-form-field> -->
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="getListadoPokemon()">Filtrar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="contenedor">
+    <mat-accordion multi>
+      <mat-expansion-panel *ngFor="let item of resultadoConsulta; let i= index">
+        <mat-expansion-panel-header>
+          <mat-panel-title style="text-transform: capitalize;">
+            {{ i+1 }}. {{ resultadoConsulta[i].name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ resultadoConsulta[i].url }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <mat-label>First name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Age</mat-label>
+          <input matInput type="number" min="1">
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
