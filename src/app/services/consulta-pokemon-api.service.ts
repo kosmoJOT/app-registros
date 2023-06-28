@@ -19,6 +19,7 @@ export class ConsultaPokemonApiService {
 
   getInformacionPokemon(nombre: string): Observable<Pokemon>{
     const URL = `https://pokeapi.co/api/v2/pokemon/${nombre}`;
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=50")
     return this.http.get<Pokemon>(URL);
   }
 }

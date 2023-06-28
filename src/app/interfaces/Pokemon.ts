@@ -10,7 +10,7 @@ interface Pokemon {
   moves: object[],
   name: string,
   order: number,
-  past_types: object[],
+  past_types: any,
   species: object,
   img?: string,
   stats: object[],

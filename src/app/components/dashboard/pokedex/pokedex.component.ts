@@ -16,8 +16,8 @@ export class PokedexComponent implements OnInit{
   resultadoConsulta: ResultadoConsulta[];
   listadoPokemon: Pokemon[];
   consultaPokemonApi?: ConsultaPokemonApi;
-  minimoId: number = 1;
-  maximoId: number = 11;
+  minimoId: number = 22;
+  maximoId: number = 41;
 
   constructor(private _serviceConsultaPokemonApi: ConsultaPokemonApiService){
     this.resultadoConsulta = [];
@@ -42,6 +42,7 @@ export class PokedexComponent implements OnInit{
     this._serviceConsultaPokemonApi.getInformacionPokemon(nombre).subscribe( (data) => {
       data.img = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`
       this.listadoPokemon.push(data);
+      console.log(this.listadoPokemon)
     });
   }
 }
